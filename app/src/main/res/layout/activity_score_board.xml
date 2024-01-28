@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.score.ScoreBoardActivity">
+
+   <!-- <include
+        android:id="@+id/toolbarLayout"
+        layout="@layout/layout_toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />-->
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/teamName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:background="#8D99DC"
+        android:gravity="center"
+        android:padding="@dimen/_10dp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Team"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/battingScoreBoardHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:padding="@dimen/_10dp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teamName"        android:text="@string/batting_score_board"/>
+
+    <include
+        android:id="@+id/battingLayout"
+        app:layout_constraintTop_toBottomOf="@id/battingScoreBoardHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/batting_scoreboard_layout"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/scoresRecyclerView"
+        android:layout_width="match_parent"
+        android:padding="@dimen/_10dp"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/batting_scoreboard_layout"
+        app:layout_constraintTop_toBottomOf="@id/battingLayout" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/bowlingScoreBoardHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:padding="@dimen/_10dp"
+        android:textColor="@color/white"
+        app:layout_constraintWidth_percent=".7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scoresRecyclerView"
+        android:text="@string/bowling_score_board"/>
+
+    <include
+        android:id="@+id/bowlersLayout"
+        app:layout_constraintTop_toBottomOf="@id/bowlingScoreBoardHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/bowling_score_board"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/bowlingScoreBoardRecyclerView"
+        android:layout_width="match_parent"
+        android:padding="@dimen/_10dp"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/batting_scoreboard_layout"
+        app:layout_constraintTop_toBottomOf="@id/bowlersLayout" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/totalScore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:background="#2FAA9E"
+        android:padding="@dimen/_10dp"
+        android:gravity="end"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bowlingScoreBoardRecyclerView"
+        android:text="Total Score 200"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

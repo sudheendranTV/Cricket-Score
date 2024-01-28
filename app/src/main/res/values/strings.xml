@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Cricket</string>
+    <string name="batting_score_board">Batting Score Board</string>
+    <string name="bowling_score_board">Bowling score board</string>
+    <string name="total_score">"Total Score  %1$S "</string>
+    <string name="runs_and_wickets">%1$s / %2$s</string>
+    <string name="total_overs">( %1$s overs )</string>
+    <string name="score_board_label">Score Board</string>
+</resources>
