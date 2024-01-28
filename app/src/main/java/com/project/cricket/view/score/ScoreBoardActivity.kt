@@ -50,6 +50,7 @@ class ScoreBoardActivity : AppCompatActivity() {
             teamName.text = teamObj.name
             totalScore.text = getString(R.string.total_score,findTotalScore(teamObj.players).toString())
             battersAdapter.updateData(teamObj.players)
+            //Bund;e
             bowlersAdapter.updateData(teamObj.bowlers)
         }
 
