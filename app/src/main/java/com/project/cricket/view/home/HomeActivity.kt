@@ -1,4 +1,4 @@
-package com.project.cricket
+package com.project.cricket.view.home
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,13 +7,16 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
+import com.project.cricket.MatchDetailsResponse
+import com.project.cricket.R
+import com.project.cricket.Util
 import com.project.cricket.adapter.TeamsAdapter
 import com.project.cricket.listener.AdapterOnclickItemListener
 import com.project.cricket.repositories.AccessFile
 import com.project.cricket.view.score.ScoreBoardActivity
 
 
-class MainActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,14 +42,24 @@ class MainActivity : AppCompatActivity() {
 
         if(teamA != null) {
             firstTeam.text = teamA.name
-            firstTeamRunsAndWicketsTxt.text = getString(R.string.runs_and_wickets,Util.getTotalScore(teamA.players.toList()).toString(),Util.getTotalWickets(teamA.bowlers.toList()).toString())
-            firstTeamOvers.text = getString(R.string.total_overs,Util.getTotalOvers(teamA.bowlers.toList()).toString())
+            firstTeamRunsAndWicketsTxt.text = getString(
+                R.string.runs_and_wickets,
+                Util.getTotalScore(teamA.players.toList()).toString(),
+                Util.getTotalWickets(teamA.bowlers.toList()).toString())
+            firstTeamOvers.text = getString(
+                R.string.total_overs,
+                Util.getTotalOvers(teamA.bowlers.toList()).toString())
         }
 
         if(teamB != null) {
             secondTeam.text = teamB.name
-            secondTeamRunsAndWicketsTxt.text = getString(R.string.runs_and_wickets,Util.getTotalScore(teamB.players.toList()).toString(),Util.getTotalWickets(teamB.bowlers.toList()).toString())
-            secondTeamOvers.text = getString(R.string.total_overs,Util.getTotalOvers(teamB.bowlers.toList()).toString())
+            secondTeamRunsAndWicketsTxt.text = getString(
+                R.string.runs_and_wickets,
+                Util.getTotalScore(teamB.players.toList()).toString(),
+                Util.getTotalWickets(teamB.bowlers.toList()).toString())
+            secondTeamOvers.text = getString(
+                R.string.total_overs,
+                Util.getTotalOvers(teamB.bowlers.toList()).toString())
 
         }
 

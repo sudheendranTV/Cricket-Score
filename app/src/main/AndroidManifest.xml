@@ -16,7 +16,7 @@
             android:name=".view.score.ScoreBoardActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".view.home.HomeActivity"
             android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
